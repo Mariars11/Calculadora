@@ -95,16 +95,26 @@ int main(){
 			}	
 			case 4:
 			{
+				char escolha;
 				system("cls");
 				printf("\t§ DIVISÃO §\n");
-				float num1, num2;
+				int num1, num2;
 				printf("¨¨ Informe o primeiro número: ");
-				scanf("%f", &num1);
+				scanf("%d", &num1);
 				printf("¨¨ Informe o segundo número: ");
-				scanf("%f", &num2);
+				scanf("%d", &num2);
 				
 				float r = divisao(num1, num2);
-				printf("   RESULTADO: [%.2f / %.2f] = |%.2f|", num1, num2, r);
+				int resto;
+				resto = (num1 % num2);
+				fflush(stdin);
+				printf("\n   RESULTADO: [%d / %d] = |%.2f|", num1, num2, r);
+				printf("\n   Deseja saber o resto(S/N)? ");
+				scanf("%c", &escolha);
+				fflush(stdin);
+				if(escolha == 'S' || escolha == 's'){
+					printf("   RESTO: %d", resto);
+				}
 			}
 				break;
 			case 5:
@@ -130,5 +140,3 @@ int main(){
 		}		
 	}while(aux != 0);
 }
-
-
