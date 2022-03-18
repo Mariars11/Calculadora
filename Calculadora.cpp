@@ -123,7 +123,7 @@ int main(){
 				break;			
 		}
 		if(aux != 0){ // o menu estava aparecendo quando pressionado 0, por isso acrescentei o if
-			Sleep(2500);
+			Sleep(2500); //tempo de espera entre o resultado e o Menu com a tela limpa
 			system("cls");
 			printf("\n\n -> MENU"); //usuario irá esquecer a qual operação se refere cada numero - por isso a repetição do menu
 			printf("\n\n |0| - Sair da aplicação!\n |1| - Adição\n |2| - Subtração\n |3| - Multiplicação\n |4| - Divisão\n |5| - Raiz\n");
