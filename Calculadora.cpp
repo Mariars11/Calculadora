@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <locale.h>
-#include <stdlib.h>
+#include <stdlib.h> //uso do system
 #include <math.h>
-#include <Windows.h.>
+#include <Windows.h.> //uso do sleep
 
 int adicao(int a, int b){
 	int resultado;
@@ -35,32 +35,32 @@ float raiz(float i){
 }
 
 int main(){
-	setlocale(LC_ALL, "Portuguese"); //Permite o uso de acentuaÁ„o e caracteres especiais no printf
-	//ContextualizaÁ„o e Menu
+	setlocale(LC_ALL, "Portuguese"); //Permite o uso de acentua√ß√£o e caracteres especiais no printf
+	//Contextualiza√ß√£o e Menu
 	printf("\n\n");
 	printf("\t _______________________________\n");
 	printf("\t|\t\t\t\t|");
 	printf("\n\t| Bem-vind@ a calculadora em C \t|\n");
 	printf("\t|\t\t\t\t|\n");
 	printf("\n -> MENU");
-	printf("\n\n |0| - Sair da aplicaÁ„o!\n |1| - AdiÁ„o\n |2| - SubtraÁ„o\n |3| - MultiplicaÁ„o\n |4| - Divis„o\n |5| - Raiz\n");
+	printf("\n\n |0| - Sair da aplica√ß√£o!\n |1| - Adi√ß√£o\n |2| - Subtra√ß√£o\n |3| - Multiplica√ß√£o\n |4| - Divis√£o\n |5| - Raiz\n");
 	int aux;
 	do{
-		printf("\n[*] Qual operaÁ„o vocÍ deseja realizar? ");
+		printf("\n[*] Qual opera√ß√£o voc√™ deseja realizar? ");
 		scanf("%d", &aux);
 		switch(aux){
 			case 0:
 				system("cls");
-				printf("\nObrigada por utilizar a aplicaÁ„o!");
+				printf("\nObrigado por utilizar a aplica√ß√£o!");
 				break;
 			case 1:
 			{
 				system("cls");
-				printf("\tß ADI«√O ß\n");
+				printf("\t¬ß ADI√á√ÉO ¬ß\n");
 				int num1, num2;
-				printf("®® Informe o primeiro n˙mero: ");
+				printf("¬®¬® Informe o primeiro n√∫mero: ");
 				scanf("%d", &num1);
-				printf("®® Informe o segundo n˙mero: ");
+				printf("¬®¬® Informe o segundo n√∫mero: ");
 				scanf("%d", &num2);
 				int r = adicao(num1, num2);
 				printf("   RESULTADO: [%d + %d] = |%d|", num1, num2, r);
@@ -69,11 +69,11 @@ int main(){
 			case 2:
 			{
 				system("cls");
-				printf("\tß SUBTRA«√O ß\n");
+				printf("\t¬ß SUBTRA√á√ÉO ¬ß\n");
 				int num1, num2;
-				printf("®® Informe o primeiro n˙mero: ");
+				printf("¬®¬® Informe o primeiro n√∫mero: ");
 				scanf("%d", &num1);
-				printf("®® Informe o segundo n˙mero: ");
+				printf("¬®¬® Informe o segundo n√∫mero: ");
 				scanf("%d", &num2);
 				int r = subtracao(num1, num2);
 				printf("   RESULTADO: [%d - %d] = |%d|", num1, num2, r);
@@ -82,11 +82,11 @@ int main(){
 			case 3:
 			{
 				system("cls");
-				printf("\tß MULTIPLICA«√O ß\n");
+				printf("\t¬ß MULTIPLICA√á√ÉO ¬ß\n");
 				float num1, num2;
-				printf("®® Informe o primeiro n˙mero: ");
+				printf("¬®¬® Informe o primeiro n√∫mero: ");
 				scanf("%f", &num1);
-				printf("®® Informe o segundo n˙mero: ");
+				printf("¬®¬® Informe o segundo n√∫mero: ");
 				scanf("%f", &num2);
 				
 				float r = multiplicacao(num1, num2);
@@ -96,11 +96,11 @@ int main(){
 			case 4:
 			{
 				system("cls");
-				printf("\tß DIVIS√O ß\n");
+				printf("\t¬ß DIVIS√ÉO ¬ß\n");
 				float num1, num2;
-				printf("®® Informe o primeiro n˙mero: ");
+				printf("¬®¬® Informe o primeiro n√∫mero: ");
 				scanf("%f", &num1);
-				printf("®® Informe o segundo n˙mero: ");
+				printf("¬®¬® Informe o segundo n√∫mero: ");
 				scanf("%f", &num2);
 				
 				float r = divisao(num1, num2);
@@ -110,24 +110,25 @@ int main(){
 			case 5:
 			{
 				system("cls");
-				printf("\tß RAIZ ß\n");
+				printf("\t¬ß RAIZ ¬ß\n");
 				float num1;
-				printf("®® Informe o n˙mero: ");
+				printf("¬®¬® Informe o n√∫mero: ");
 				scanf("%f", &num1);
 				float r = raiz(num1);
-				printf("A raiz de [%.2f] È: |%.2f|", num1, r);
+				printf("A raiz de [%.2f] √©: |%.2f|", num1, r);
 				break;
 			}
 			default:
-				printf("Essa operaÁ„o n„o est· disponÌvel!");
+				printf("Essa opera√ß√£o n√£o est√° dispon√≠vel!");
 				break;			
 		}
-		if(aux != 0){
+		if(aux != 0){ // o menu estava aparecendo quando pressionado 0, por isso acrescentei o if
 			Sleep(2500);
 			system("cls");
-			printf("\n\n -> MENU");
-			printf("\n\n |0| - Sair da aplicaÁ„o!\n |1| - AdiÁ„o\n |2| - SubtraÁ„o\n |3| - MultiplicaÁ„o\n |4| - Divis„o\n |5| - Raiz\n");
+			printf("\n\n -> MENU"); //usuario ir√° esquecer a qual opera√ß√£o se refere cada numero - por isso a repeti√ß√£o do menu
+			printf("\n\n |0| - Sair da aplica√ß√£o!\n |1| - Adi√ß√£o\n |2| - Subtra√ß√£o\n |3| - Multiplica√ß√£o\n |4| - Divis√£o\n |5| - Raiz\n");
 		}		
 	}while(aux != 0);
 }
+
 
